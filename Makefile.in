@@ -1,0 +1,34 @@
+PACKAGE = @PACKAGE@
+VERSION=@VERSION@
+utildir=@PUBRULE@
+pubdir=@prefix@
+appname=lib/@APPNAME@
+
+pages_not_xml=info.xml
+pages_not_php=fam2po.php po2js.php
+
+include $(utildir)/PubRule
+
+$(pubdir):
+	mkdir -p $@
+
+$(pubdir)/programs: $(pubdir)
+	mkdir -p $@
+
+$(pubdir)/programs/datatables_install: programs/datatables_install $(pubdir)/programs
+	cp $< $@
+	chmod a+x $@
+
+$(pubdir)/lib: $(pubdir)
+	mkdir -p $@
+
+$(pubdir)/$(appname): $(pubdir)/lib
+	mkdir -p $@
+
+$(pubdir)/$(appname)/.htaccess: htaccess $(pubdir)/$(appname)
+	cp htaccess $@
+
+publish: $(pubdir)/programs/datatables_install $(pubdir)/$(appname)/.htaccess
+clean:
+	/bin/rm -f *.*~ config.* Makefile configure $(appname)_init.php info.xml $(PACKAGE)-*webinst
+	/bin/rm -fr autom4te.cache
