@@ -1,4 +1,4 @@
-dynacase-jquery-ui
+dynacase-datatable
 ==================
 
-JQuery Ui packaging
+JQuery dataTable packaging
