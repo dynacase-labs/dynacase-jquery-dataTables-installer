@@ -3,6 +3,10 @@
 
     <description>DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.</description>
 
+    <replaces>
+        <module name="dynacase-jquery-dataTables"/>
+    </replaces>
+
     <parameters>
         <param name="datatables" label="Datatables jquery download URL" type="text"
                volatile="yes" onupgrade="W"
