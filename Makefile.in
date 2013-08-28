@@ -28,7 +28,13 @@ $(pubdir)/$(appname): $(pubdir)/lib
 $(pubdir)/$(appname)/.htaccess: htaccess $(pubdir)/$(appname)
 	cp htaccess $@
 
-publish: $(pubdir)/programs/datatables_install $(pubdir)/$(appname)/.htaccess
+$(pubdir)/.autoloader-ignore.d:
+	mkdir -p $@
+$(pubdir)/.autoloader-ignore.d/@PACKAGE@: autoloader-ignore-d $(pubdir)/.autoloader-ignore.d
+	cp $< $@
+
+publish: $(pubdir)/programs/datatables_install $(pubdir)/$(appname)/.htaccess $(pubdir)/.autoloader-ignore.d/@PACKAGE@
+
 clean:
 	/bin/rm -f *.*~ config.* Makefile configure $(appname)_init.php info.xml $(PACKAGE)-*webinst
 	/bin/rm -fr autom4te.cache
