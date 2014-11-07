@@ -88,7 +88,7 @@ if ($fh === false) {
     exit(1);
 }
 
-$datatables_subdir = 'lib/jquery-dataTables';
+$datatables_subdir = 'lib/jquery-dataTables/1.10';
 // Create datatables dir if it does not exists
 if (!is_dir($datatables_subdir)) {
     $ret = mkdir($datatables_subdir);
@@ -99,7 +99,7 @@ if (!is_dir($datatables_subdir)) {
 }
 
 // Copy new datatables files over existing datatables directory
-$cmd = sprintf('cp -r %s/media/* %s', escapeshellarg($tempdir), escapeshellarg($datatables_subdir));
+$cmd = sprintf('cp -r %s/DataTables-1.10.3/media/* %s', escapeshellarg($tempdir), escapeshellarg($datatables_subdir));
 system($cmd, $ret);
 
 if ($ret !== 0) {
