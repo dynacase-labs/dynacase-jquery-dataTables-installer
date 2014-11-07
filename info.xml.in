@@ -10,7 +10,7 @@
     <parameters>
         <param name="datatables" label="Datatables jquery download URL" type="text"
                volatile="yes" onupgrade="W"
-               default="http://ftp.dynacase.org/third-party/DataTables-1.9.1.zip"/>
+               default="http://ftp.dynacase.org/third-party/DataTables-1.10.3.zip"/>
     </parameters>
 
     <pre-install>
