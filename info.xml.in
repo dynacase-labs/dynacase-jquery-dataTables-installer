@@ -28,14 +28,14 @@
     </pre-upgrade>
 
     <post-install>
-        <download href="@datatables" action="programs/datatables_install">
+        <download href="@datatables" action="programs/datatables-1.10_install">
             <label lang="en">Download and install DataTables
             </label>
         </download>
     </post-install>
 
     <post-upgrade>
-        <download href="@datatables" action="programs/datatables_install">
+        <download href="@datatables" action="programs/datatables-1.10_install">
             <label lang="en">Download and install DataTables
             </label>
         </download>
