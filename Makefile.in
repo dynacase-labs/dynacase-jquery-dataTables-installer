@@ -28,12 +28,15 @@ $(pubdir)/$(appname): $(pubdir)/lib
 $(pubdir)/$(appname)/.htaccess: htaccess $(pubdir)/$(appname)/
 	cp htaccess $@
 
+$(pubdir)/$(appname)/bootstrap : bootstrap $(pubdir)/$(appname)/
+	cp -r $< $@
+
 $(pubdir)/.autoloader-ignore.d:
 	mkdir -p $@
 $(pubdir)/.autoloader-ignore.d/@PACKAGE@: autoloader-ignore-d $(pubdir)/.autoloader-ignore.d
 	cp $< $@
 
-publish: $(pubdir)/programs/datatables-1.10_install $(pubdir)/$(appname)/.htaccess $(pubdir)/.autoloader-ignore.d/@PACKAGE@
+publish: $(pubdir)/programs/datatables-1.10_install $(pubdir)/$(appname)/.htaccess $(pubdir)/$(appname)/bootstrap $(pubdir)/.autoloader-ignore.d/@PACKAGE@
 
 clean:
 	/bin/rm -f *.*~ config.* Makefile configure $(appname)_init.php info.xml $(PACKAGE)-*webinst
