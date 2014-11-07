@@ -5,9 +5,9 @@ VERSION=`cat VERSION`
 AC_SUBST(RELEASE)
 RELEASE=`cat RELEASE`
 AC_SUBST(PACKAGE)
-PACKAGE=dynacase-jquery-dataTables-installer
+PACKAGE=dynacase-jquery-dataTables-1.10-installer
 AC_SUBST(APPNAME)
-APPNAME=jquery-dataTables
+APPNAME=jquery-dataTables/1.10
 
 ac_default_prefix=/usr/share/what
 AC_SUBST(PUBRULE)
