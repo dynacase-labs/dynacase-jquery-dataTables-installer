@@ -1,31 +1,13 @@
 <?xml version="1.0"?>
-<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@" basecomponent="no">
+<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@">
 
     <description>DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.</description>
-
-    <replaces>
-        <module name="dynacase-jquery-dataTables"/>
-    </replaces>
-
+ 
     <parameters>
-        <param name="datatables" label="Datatables jquery download URL" type="text"
+        <param name="datatables" label="Twitter bootstrap download URL" type="text"
                volatile="yes" onupgrade="W"
-               default="http://ftp.dynacase.org/third-party/DataTables-1.10.3.zip"/>
+               default="http://ftp.dynacase.org/third-party/datatables-@VERSION@.zip"/>
     </parameters>
-
-    <pre-install>
-        <check type="syscommand" command="gunzip"/>
-        <check type="syscommand" command="tar"/>
-        <check type="syscommand" command="find"/>
-        <check type="syscommand" command="chmod"/>
-    </pre-install>
-
-    <pre-upgrade>
-        <check type="syscommand" command="gunzip"/>
-        <check type="syscommand" command="tar"/>
-        <check type="syscommand" command="find"/>
-        <check type="syscommand" command="chmod"/>
-    </pre-upgrade>
 
     <post-install>
         <download href="@datatables" action="programs/datatables-1.10_install">
@@ -40,5 +22,13 @@
             </label>
         </download>
     </post-upgrade>
+
+    <pre-install>
+        <check type="phpclass"  class="ZipArchive"><help>Zip class is not present (including in php 5.2)</help></check>
+    </pre-install>
+
+    <pre-upgrade>
+        <check type="phpclass"  class="ZipArchive"><help>Zip class is not present (including in php 5.2)</help></check>
+    </pre-upgrade>
 
 </module>
