@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@">
+<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@" license="http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public License v3.0">
 
     <description>DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.</description>
  
     <parameters>
-        <param name="datatables" label="Twitter bootstrap download URL" type="text"
+        <param name="datatables" label="datatables-@VERSION@ download URL" type="text"
                volatile="yes" onupgrade="W"
                default="http://ftp.dynacase.org/third-party/datatables-@VERSION@.zip"/>
     </parameters>
